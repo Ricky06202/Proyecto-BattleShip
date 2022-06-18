@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/SoundTrack Piratas del Caribe.mp3-b289e3f52a0d8eac9cd4e291618ac421.mp3str"
+
+[deps]
+
+source_file="res://recursos/Tipografia/MantisRumble/SoundTrack Piratas del Caribe.mp3"
+dest_files=[ "res://.import/SoundTrack Piratas del Caribe.mp3-b289e3f52a0d8eac9cd4e291618ac421.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

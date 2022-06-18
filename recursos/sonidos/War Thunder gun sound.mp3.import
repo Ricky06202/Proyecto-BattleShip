@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/War Thunder gun sound.mp3-46d82a13f0c45f9071070df403bd34dd.mp3str"
+
+[deps]
+
+source_file="res://recursos/sonidos/War Thunder gun sound.mp3"
+dest_files=[ "res://.import/War Thunder gun sound.mp3-46d82a13f0c45f9071070df403bd34dd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

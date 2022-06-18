@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Torpedo, hit, flooding and burning sound effect.mp3-5c7e4b69ef23f79aac9bad0f4a15747f.mp3str"
+
+[deps]
+
+source_file="res://recursos/sonidos/Torpedo, hit, flooding and burning sound effect.mp3"
+dest_files=[ "res://.import/Torpedo, hit, flooding and burning sound effect.mp3-5c7e4b69ef23f79aac9bad0f4a15747f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
