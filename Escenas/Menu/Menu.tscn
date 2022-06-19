@@ -26,7 +26,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 184, 832 ) ]
+"values": [ Vector2( 32, 36 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("FuegosArtificiales/FuegoArtificial1:emitting")
@@ -38,7 +38,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("FuegosArtificiales/FuegoArtificial2:emitting")
@@ -128,10 +128,10 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Titulo" type="Label" parent="."]
-margin_left = 184.0
-margin_top = 832.0
-margin_right = 1085.0
-margin_bottom = 995.999
+margin_left = 32.0
+margin_top = 36.0
+margin_right = 933.0
+margin_bottom = 199.999
 custom_colors/font_color = Color( 0.054902, 0.196078, 0.411765, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "(BattleShip)"
@@ -144,7 +144,6 @@ anims/Titulo = SubResource( 3 )
 
 [node name="FuegoArtificial1" parent="FuegosArtificiales" instance=ExtResource( 4 )]
 position = Vector2( 153, 60 )
-emitting = true
 
 [node name="FuegoArtificial2" parent="FuegosArtificiales" instance=ExtResource( 4 )]
 position = Vector2( 405, 126 )
