@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://recursos/Interfaz/png/buttons/normal/left.png" type="Texture" id=1]
 [ext_resource path="res://recursos/Interfaz/png/buttons/normal/profile.png" type="Texture" id=2]
@@ -8,54 +8,140 @@
 [ext_resource path="res://recursos/Interfaz/png/buttons/normal/help.png" type="Texture" id=6]
 [ext_resource path="res://recursos/Interfaz/png/buttons/normal/multiplayer.png" type="Texture" id=7]
 [ext_resource path="res://recursos/Adicional/Sun.png" type="Texture" id=8]
+[ext_resource path="res://Codigos/Modo de juego/Modo_de_juego.gd" type="Script" id=9]
+[ext_resource path="res://recursos/Interfaz/png/buttons/hover/home.png" type="Texture" id=10]
+[ext_resource path="res://recursos/Interfaz/png/buttons/hover/help.png" type="Texture" id=11]
+[ext_resource path="res://recursos/Interfaz/png/buttons/hover/profile.png" type="Texture" id=12]
+[ext_resource path="res://recursos/Interfaz/png/buttons/hover/left.png" type="Texture" id=13]
+[ext_resource path="res://recursos/Interfaz/png/buttons/click/left.png" type="Texture" id=14]
+[ext_resource path="res://recursos/Interfaz/png/buttons/click/profile.png" type="Texture" id=15]
+[ext_resource path="res://recursos/Interfaz/png/buttons/click/help.png" type="Texture" id=16]
+[ext_resource path="res://recursos/Interfaz/png/buttons/click/home.png" type="Texture" id=17]
+
+[sub_resource type="Animation" id=3]
+resource_name = "Fondo"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fondo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1280, 0 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fondo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sol:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=5]
 resource_name = "Sol_Quieto"
 length = 2.0
 loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sol:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -15.5, 15.5, -15.5 ]
+}
 
-[node name="Modo_de_juego" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Modo_de_juego" type="Node2D"]
+script = ExtResource( 9 )
 
-[node name="Animacion" type="AnimationPlayer" parent="."]
+[node name="AnimacionFondo" type="AnimationPlayer" parent="."]
+anims/Fondo = SubResource( 3 )
 anims/RESET = SubResource( 1 )
-anims/Sol_Quieto = SubResource( 2 )
+
+[node name="AnimacionSol" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 4 )
+anims/Sol_Quieto = SubResource( 5 )
 
 [node name="Fondo" type="Sprite" parent="."]
 scale = Vector2( 0.26305, 0.24 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="Un_Jugador" parent="Fondo" instance=ExtResource( 5 )]
-position = Vector2( 1581.45, 1300 )
-scale = Vector2( 1, 1 )
-imagen = ExtResource( 2 )
+[node name="FondoCopia" type="Sprite" parent="Fondo"]
+position = Vector2( -4865.99, 0 )
+scale = Vector2( 1.00078, 1 )
+texture = ExtResource( 3 )
+centered = false
 
-[node name="Dos_Jugadores" parent="Fondo" instance=ExtResource( 5 )]
-position = Vector2( 3010.83, 1300 )
-scale = Vector2( 1, 1 )
-imagen = ExtResource( 7 )
+[node name="Un_Jugador" parent="." instance=ExtResource( 5 )]
+position = Vector2( 416, 312 )
+scale = Vector2( 0.26305, 0.24 )
+imagenNormal = ExtResource( 2 )
+imagenSeleccionada = ExtResource( 12 )
+imagenClic = ExtResource( 15 )
 
-[node name="Ayuda" parent="Fondo" instance=ExtResource( 5 )]
-position = Vector2( 4440.22, 433.334 )
-scale = Vector2( 1, 1 )
-imagen = ExtResource( 6 )
+[node name="Dos_Jugadores" parent="." instance=ExtResource( 5 )]
+position = Vector2( 791.999, 312 )
+scale = Vector2( 0.26305, 0.24 )
+imagenNormal = ExtResource( 7 )
+imagenSeleccionada = ExtResource( 7 )
+imagenClic = ExtResource( 7 )
 
-[node name="Volver" parent="Fondo" instance=ExtResource( 5 )]
-position = Vector2( 425.774, 2566.67 )
-scale = Vector2( 1, 1 )
-imagen = ExtResource( 1 )
+[node name="Ayuda" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1168, 104 )
+scale = Vector2( 0.26305, 0.24 )
+imagenNormal = ExtResource( 6 )
+imagenSeleccionada = ExtResource( 11 )
+imagenClic = ExtResource( 16 )
 
-[node name="Menu" parent="Fondo" instance=ExtResource( 5 )]
-position = Vector2( 4440.22, 2566.67 )
-scale = Vector2( 1, 1 )
-imagen = ExtResource( 4 )
+[node name="Volver" parent="." instance=ExtResource( 5 )]
+position = Vector2( 112, 616.001 )
+scale = Vector2( 0.26305, 0.24 )
+imagenNormal = ExtResource( 1 )
+imagenSeleccionada = ExtResource( 13 )
+imagenClic = ExtResource( 14 )
 
-[node name="Sol" parent="Fondo" instance=ExtResource( 5 )]
-position = Vector2( 486.6, 533.334 )
-scale = Vector2( 1, 1 )
-imagen = ExtResource( 8 )
+[node name="Menu" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1168, 616.001 )
+scale = Vector2( 0.26305, 0.24 )
+imagenNormal = ExtResource( 4 )
+imagenSeleccionada = ExtResource( 10 )
+imagenClic = ExtResource( 17 )
+
+[node name="Sol" parent="." instance=ExtResource( 5 )]
+position = Vector2( 128, 128 )
+scale = Vector2( 0.262706, 0.240377 )
+imagenNormal = ExtResource( 8 )
+imagenSeleccionada = ExtResource( 8 )
+imagenClic = ExtResource( 8 )
