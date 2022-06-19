@@ -1,8 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://recursos/Interfaz/png/background1.png" type="Texture" id=1]
 [ext_resource path="res://recursos/Tipografia/Balloon/Balloon.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://Codigos/Menu/Menu.gd" type="Script" id=3]
+[ext_resource path="res://Escenas/Fuegos Artificiales/FuegoArtificial.tscn" type="PackedScene" id=4]
+[ext_resource path="res://recursos/Playa, mar, y barcos viejos/PNG/Default size/Ships/ship (7).png" type="Texture" id=5]
+[ext_resource path="res://recursos/Playa, mar, y barcos viejos/PNG/Default size/Ships/ship (3).png" type="Texture" id=6]
+[ext_resource path="res://recursos/Playa, mar, y barcos viejos/PNG/Default size/Ships/ship (18).png" type="Texture" id=7]
+[ext_resource path="res://recursos/Playa, mar, y barcos viejos/PNG/Default size/Ships/ship (5).png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -23,6 +28,42 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 184, 832 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("FuegosArtificiales/FuegoArtificial1:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("FuegosArtificiales/FuegoArtificial2:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("FuegosArtificiales/FuegoArtificial3:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "Titulo"
@@ -39,21 +80,49 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 184, 832 ), Vector2( 499, 571 ), Vector2( 174, 463 ), Vector2( 8, 300 ), Vector2( 32, 36 ) ]
 }
-
-[sub_resource type="ParticlesMaterial" id=4]
-emission_shape = 1
-emission_sphere_radius = 5.78
-flag_disable_z = true
-gravity = Vector3( 0, 98, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
+tracks/1/type = "value"
+tracks/1/path = NodePath("FuegosArtificiales/FuegoArtificial1:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("FuegosArtificiales/FuegoArtificial2:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("FuegosArtificiales/FuegoArtificial3:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Fondo" type="Sprite" parent="."]
 scale = Vector2( 0.26305, 0.24 )
 texture = ExtResource( 1 )
 centered = false
@@ -71,8 +140,32 @@ text = "(BattleShip)"
 anims/RESET = SubResource( 2 )
 anims/Titulo = SubResource( 3 )
 
-[node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( 456, 83 )
-explosiveness = 0.5
-randomness = 0.5
-process_material = SubResource( 4 )
+[node name="FuegosArtificiales" type="Node2D" parent="."]
+
+[node name="FuegoArtificial1" parent="FuegosArtificiales" instance=ExtResource( 4 )]
+position = Vector2( 153, 60 )
+emitting = true
+
+[node name="FuegoArtificial2" parent="FuegosArtificiales" instance=ExtResource( 4 )]
+position = Vector2( 405, 126 )
+
+[node name="FuegoArtificial3" parent="FuegosArtificiales" instance=ExtResource( 4 )]
+position = Vector2( 710, 53 )
+
+[node name="Barcos" type="Node2D" parent="."]
+
+[node name="BarcoRojo" type="Sprite" parent="Barcos"]
+position = Vector2( 290, 459 )
+texture = ExtResource( 6 )
+
+[node name="BarcoAmarillo" type="Sprite" parent="Barcos"]
+position = Vector2( 962, 509 )
+texture = ExtResource( 7 )
+
+[node name="BarcoCeleste" type="Sprite" parent="Barcos"]
+position = Vector2( 497, 530 )
+texture = ExtResource( 8 )
+
+[node name="BarcoBlanco" type="Sprite" parent="Barcos"]
+position = Vector2( 814, 505 )
+texture = ExtResource( 5 )

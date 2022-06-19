@@ -14,3 +14,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+#func _on_Comenzar_timeout():
+	#for fuegoArtificial in get_tree().get_nodes_in_group("FuegosArtificiales"):
+		#(fuegoArtificial as CPUParticles2D).emitting = true
+
+
