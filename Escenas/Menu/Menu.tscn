@@ -154,17 +154,21 @@ position = Vector2( 710, 53 )
 [node name="Barcos" type="Node2D" parent="."]
 
 [node name="BarcoRojo" type="Sprite" parent="Barcos"]
-position = Vector2( 290, 459 )
+position = Vector2( -329, 639 )
+rotation = -1.57079
 texture = ExtResource( 6 )
 
 [node name="BarcoAmarillo" type="Sprite" parent="Barcos"]
-position = Vector2( 962, 509 )
+position = Vector2( -177, 638 )
+rotation = -1.57079
 texture = ExtResource( 7 )
 
 [node name="BarcoCeleste" type="Sprite" parent="Barcos"]
-position = Vector2( 497, 530 )
+position = Vector2( -330, 493 )
+rotation = -1.57079
 texture = ExtResource( 8 )
 
 [node name="BarcoBlanco" type="Sprite" parent="Barcos"]
-position = Vector2( 814, 505 )
+position = Vector2( -141, 532 )
+rotation = -1.57079
 texture = ExtResource( 5 )

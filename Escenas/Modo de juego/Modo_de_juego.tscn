@@ -1,7 +1,6 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://recursos/Interfaz/png/buttons/normal/left.png" type="Texture" id=1]
-[ext_resource path="res://recursos/Interfaz/png/buttons/normal/profile.png" type="Texture" id=2]
 [ext_resource path="res://recursos/Interfaz/png/background2.png" type="Texture" id=3]
 [ext_resource path="res://recursos/Interfaz/png/buttons/normal/home.png" type="Texture" id=4]
 [ext_resource path="res://Escenas/Boton/Boton.tscn" type="PackedScene" id=5]
@@ -11,12 +10,12 @@
 [ext_resource path="res://Codigos/Modo de juego/Modo_de_juego.gd" type="Script" id=9]
 [ext_resource path="res://recursos/Interfaz/png/buttons/hover/home.png" type="Texture" id=10]
 [ext_resource path="res://recursos/Interfaz/png/buttons/hover/help.png" type="Texture" id=11]
-[ext_resource path="res://recursos/Interfaz/png/buttons/hover/profile.png" type="Texture" id=12]
 [ext_resource path="res://recursos/Interfaz/png/buttons/hover/left.png" type="Texture" id=13]
 [ext_resource path="res://recursos/Interfaz/png/buttons/click/left.png" type="Texture" id=14]
-[ext_resource path="res://recursos/Interfaz/png/buttons/click/profile.png" type="Texture" id=15]
 [ext_resource path="res://recursos/Interfaz/png/buttons/click/help.png" type="Texture" id=16]
 [ext_resource path="res://recursos/Interfaz/png/buttons/click/home.png" type="Texture" id=17]
+[ext_resource path="res://recursos/Interfaz/png/buttons/hover/multiplayer.png" type="Texture" id=18]
+[ext_resource path="res://recursos/Interfaz/png/buttons/click/multiplayer.png" type="Texture" id=19]
 
 [sub_resource type="Animation" id=3]
 resource_name = "Fondo"
@@ -107,16 +106,13 @@ centered = false
 [node name="Un_Jugador" parent="." instance=ExtResource( 5 )]
 position = Vector2( 416, 312 )
 scale = Vector2( 0.26305, 0.24 )
-imagenNormal = ExtResource( 2 )
-imagenSeleccionada = ExtResource( 12 )
-imagenClic = ExtResource( 15 )
 
 [node name="Dos_Jugadores" parent="." instance=ExtResource( 5 )]
 position = Vector2( 791.999, 312 )
 scale = Vector2( 0.26305, 0.24 )
 imagenNormal = ExtResource( 7 )
-imagenSeleccionada = ExtResource( 7 )
-imagenClic = ExtResource( 7 )
+imagenSeleccionada = ExtResource( 18 )
+imagenClic = ExtResource( 19 )
 
 [node name="Ayuda" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1168, 104 )
@@ -126,6 +122,7 @@ imagenSeleccionada = ExtResource( 11 )
 imagenClic = ExtResource( 16 )
 
 [node name="Volver" parent="." instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 112, 616.001 )
 scale = Vector2( 0.26305, 0.24 )
 imagenNormal = ExtResource( 1 )
@@ -145,3 +142,5 @@ scale = Vector2( 0.262706, 0.240377 )
 imagenNormal = ExtResource( 8 )
 imagenSeleccionada = ExtResource( 8 )
 imagenClic = ExtResource( 8 )
+
+[connection signal="input_event" from="Menu" to="." method="_on_Menu_input_event"]

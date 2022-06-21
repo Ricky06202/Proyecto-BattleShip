@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://recursos/Interfaz/png/buttons/normal/profile.png" type="Texture" id=1]
 [ext_resource path="res://Codigos/Boton/Boton.gd" type="Script" id=2]
-[ext_resource path="res://recursos/Barcos/barcoPequeño1.png" type="Texture" id=3]
-[ext_resource path="res://recursos/Barcos/barcoGrande1.png" type="Texture" id=4]
-[ext_resource path="res://recursos/Barcos/barcoGrande2.png" type="Texture" id=5]
+[ext_resource path="res://recursos/Interfaz/png/buttons/hover/profile.png" type="Texture" id=3]
+[ext_resource path="res://recursos/Interfaz/png/buttons/click/profile.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 352.0
@@ -15,9 +14,9 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
-imagenNormal = ExtResource( 4 )
-imagenSeleccionada = ExtResource( 5 )
-imagenClic = ExtResource( 3 )
+imagenNormal = ExtResource( 1 )
+imagenSeleccionada = ExtResource( 3 )
+imagenClic = ExtResource( 4 )
 
 [node name="Imagen" type="Sprite" parent="."]
 texture = ExtResource( 1 )
