@@ -115,7 +115,6 @@ centered = false
 
 [node name="Modo" type="Node2D" parent="."]
 position = Vector2( 64, 8 )
-scale = Vector2( 1, 1 )
 
 [node name="Un_Jugador" parent="Modo" instance=ExtResource( 5 )]
 position = Vector2( 416, 312 )
