@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Escenas/Tablero/Tablero.tres" type="TileSet" id=1]
+[ext_resource path="res://Escenas/Casilla/Casilla.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -20,3 +21,113 @@ cell_size = Vector2( 170, 170 )
 centered_textures = true
 format = 1
 tile_data = PoolIntArray( -131075, 10, 0, -131074, 10, 0, -131073, 10, 0, -196608, 10, 0, -196607, 10, 0, -196606, 10, 0, -65539, 10, 0, -65538, 10, 0, -65537, 10, 0, -131072, 10, 0, -131071, 10, 0, -131070, 10, 0, -3, 10, 0, -2, 10, 0, -1, 10, 0, -65536, 10, 0, -65535, 10, 0, -65534, 10, 0, 65533, 10, 0, 65534, 10, 0, 65535, 10, 0, 0, 10, 0, 1, 10, 0, 2, 10, 0, 131069, 10, 0, 131070, 10, 0, 131071, 10, 0, 65536, 10, 0, 65537, 10, 0, 65538, 10, 0, 196605, 10, 0, 196606, 10, 0, 196607, 10, 0, 131072, 10, 0, 131073, 10, 0, 131074, 10, 0 )
+
+[node name="CasillasTablero" type="Node2D" parent="."]
+
+[node name="Casilla" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -320, -319 )
+
+[node name="Casilla2" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -191, -319 )
+
+[node name="Casilla3" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -63, -319 )
+
+[node name="Casilla4" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 63, -319 )
+
+[node name="Casilla5" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 191, -318 )
+
+[node name="Casilla6" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 318, -318 )
+
+[node name="Casilla7" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -319, -191 )
+
+[node name="Casilla8" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -190, -191 )
+
+[node name="Casilla9" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -62, -191 )
+
+[node name="Casilla10" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 64, -191 )
+
+[node name="Casilla11" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 192, -190 )
+
+[node name="Casilla12" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 319, -190 )
+
+[node name="Casilla13" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -320, -64 )
+
+[node name="Casilla14" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -191, -64 )
+
+[node name="Casilla15" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -63, -64 )
+
+[node name="Casilla16" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 63, -64 )
+
+[node name="Casilla17" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 191, -63 )
+
+[node name="Casilla18" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 318, -63 )
+
+[node name="Casilla19" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -319, 64 )
+
+[node name="Casilla20" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -190, 64 )
+
+[node name="Casilla21" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -62, 64 )
+
+[node name="Casilla22" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 64, 64 )
+
+[node name="Casilla23" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 192, 65 )
+
+[node name="Casilla24" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 319, 65 )
+
+[node name="Casilla25" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -320, 191 )
+
+[node name="Casilla26" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -191, 191 )
+
+[node name="Casilla27" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -63, 191 )
+
+[node name="Casilla28" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 63, 191 )
+
+[node name="Casilla29" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 191, 192 )
+
+[node name="Casilla30" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 318, 192 )
+
+[node name="Casilla31" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -319, 319 )
+
+[node name="Casilla32" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -190, 319 )
+
+[node name="Casilla33" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( -62, 319 )
+
+[node name="Casilla34" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 64, 319 )
+
+[node name="Casilla35" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 192, 320 )
+
+[node name="Casilla36" parent="CasillasTablero" instance=ExtResource( 2 )]
+position = Vector2( 319, 320 )
