@@ -4,8 +4,8 @@
 
 [node name="Casilla" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-scale = Vector2( 5.75, 5.75 )
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Casilla"]]
+scale = Vector2( 4, 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource( 1 )

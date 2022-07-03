@@ -27,9 +27,8 @@ func guardar_estado_de_visibilidad() -> void:
 #func _process(delta: float) -> void:
 #	pass
 func fue_soltado_el_clic(event: InputEvent) -> bool:
-	if event is InputEventMouseButton:
-		if event.is_action_released("clic"):
-			return true
+	if event.is_action_released("clic"):
+		return true
 	return false
 
 func _on_Menu_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

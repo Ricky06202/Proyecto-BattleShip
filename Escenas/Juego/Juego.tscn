@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Escenas/Tablero/Tablero.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Escenas/Barco/Barco.tscn" type="PackedScene" id=2]
+[ext_resource path="res://recursos/Barcos/barcoGrande1.png" type="Texture" id=3]
+[ext_resource path="res://recursos/Barcos/barcoPequeño1.png" type="Texture" id=4]
+[ext_resource path="res://recursos/Barcos/barcoPequeño2.png" type="Texture" id=5]
+
+[node name="Juego" type="Node2D"]
+position = Vector2( 568, 334 )
+
+[node name="Tablero" parent="." instance=ExtResource( 1 )]
+position = Vector2( -204, 26 )
+scale = Vector2( 0.9, 0.9 )
+
+[node name="Barco" parent="." instance=ExtResource( 2 )]
+position = Vector2( 620, -247 )
+
+[node name="Barco2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 621, -120 )
+imagen = ExtResource( 3 )
+vidas = 3
+
+[node name="Barco3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 623, 12 )
+imagen = ExtResource( 4 )
+vidas = 2
+
+[node name="Barco4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 626, 139 )
+imagen = ExtResource( 5 )
+vidas = 2
