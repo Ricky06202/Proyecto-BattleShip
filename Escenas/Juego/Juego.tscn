@@ -7,26 +7,25 @@
 [ext_resource path="res://recursos/Barcos/barcoPequeño2.png" type="Texture" id=5]
 
 [node name="Juego" type="Node2D"]
-position = Vector2( 568, 334 )
 
 [node name="Tablero" parent="." instance=ExtResource( 1 )]
-position = Vector2( -204, 26 )
+position = Vector2( 362, 359 )
 scale = Vector2( 0.9, 0.9 )
 
 [node name="Barco" parent="." instance=ExtResource( 2 )]
-position = Vector2( 620, -247 )
+position = Vector2( 1186, 86 )
 
 [node name="Barco2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 621, -120 )
+position = Vector2( 1187, 213 )
 imagen = ExtResource( 3 )
 vidas = 3
 
 [node name="Barco3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 623, 12 )
+position = Vector2( 1189, 345 )
 imagen = ExtResource( 4 )
 vidas = 2
 
 [node name="Barco4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 626, 139 )
+position = Vector2( 1192, 472 )
 imagen = ExtResource( 5 )
 vidas = 2

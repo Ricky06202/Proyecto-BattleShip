@@ -18,7 +18,7 @@ var rotacionInicial
 
 var casillasDetectadas := 0 
 var barcoDetectado := false
-var distanciaAceptable := 30
+var distanciaAceptable := 50
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,16 +40,22 @@ func ajustar_posicion() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	barcoDetectado = nodo_Deteccion.get_overlapping_areas().size() > 0
+	casillasDetectadas = nodo_Deteccion.get_overlapping_bodies().size()
+		
 	if estaAgarrado:
 		global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
 	else:
 		global_position = lerp(global_position, posicionDeReposo, 10 * delta)
 		global_rotation = rotacionActual
 	
-	barcoDetectado = nodo_Deteccion.get_overlapping_areas().size() > 0
 	
-	casillasDetectadas = nodo_Deteccion.get_overlapping_bodies().size()
-			
+	if casillasDetectadas < vidas:
+		reiniciar_posicion_y_rotacion()
+
+func reiniciar_posicion_y_rotacion():
+	posicionDeReposo = posicionInicial
+	rotacionActual = rotacionInicial
 		
 		
 func _on_Deteccion_mouse_entered():
@@ -70,9 +76,8 @@ func _on_Deteccion_input_event(viewport, event, shape_idx):
 					if distanciaCasilla <= distanciaAceptable:
 						posicionDeReposo = casilla.global_position
 						rotacionActual = global_rotation
-			else:
-				posicionDeReposo = posicionInicial
-				rotacionActual = rotacionInicial
+			elif casillasDetectadas < vidas:
+				reiniciar_posicion_y_rotacion()
 					
 		nodo_Imagen.scale = tamanoNormal
 		estaAgarrado = not estaAgarrado 
