@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Escenas/Tablero/Tablero.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escenas/Barco/Barco.tscn" type="PackedScene" id=2]
 [ext_resource path="res://recursos/Barcos/barcoGrande1.png" type="Texture" id=3]
 [ext_resource path="res://recursos/Barcos/barcoPequeño1.png" type="Texture" id=4]
 [ext_resource path="res://recursos/Barcos/barcoPequeño2.png" type="Texture" id=5]
+[ext_resource path="res://Escenas/Boton/Boton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://recursos/Interfaz/png/buttons/normal/small.png" type="Texture" id=7]
+[ext_resource path="res://recursos/Interfaz/png/buttons/click/small.png" type="Texture" id=8]
+[ext_resource path="res://recursos/Interfaz/png/buttons/hover/small.png" type="Texture" id=9]
+[ext_resource path="res://recursos/Interfaz/png/buttons/normal/accept.png" type="Texture" id=10]
+[ext_resource path="res://recursos/Interfaz/png/buttons/click/accept.png" type="Texture" id=11]
+[ext_resource path="res://recursos/Interfaz/png/buttons/hover/accept.png" type="Texture" id=12]
+
+[sub_resource type="CapsuleShape2D" id=1]
 
 [node name="Juego" type="Node2D"]
 
@@ -29,3 +38,33 @@ vidas = 2
 position = Vector2( 1192, 472 )
 imagen = ExtResource( 5 )
 vidas = 2
+
+[node name="Aleatorio" parent="." instance=ExtResource( 6 )]
+position = Vector2( 869, 639 )
+scale = Vector2( 0.196376, 0.195933 )
+imagenNormal = ExtResource( 7 )
+imagenSeleccionada = ExtResource( 9 )
+imagenClic = ExtResource( 8 )
+conTexto = true
+texto = "aleatorio"
+tamanoLetra = 200
+tamanoDeContorno = 10
+colorDeContorno = Color( 0.137255, 0.733333, 0.862745, 1 )
+usarFiltro = true
+
+[node name="Imagen" parent="Aleatorio" index="0"]
+texture = ExtResource( 7 )
+
+[node name="AreaInteractuable" parent="Aleatorio" index="1"]
+rotation = 1.57079
+scale = Vector2( 35.5851, 35.5851 )
+shape = SubResource( 1 )
+
+[node name="Boton" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1151, 639 )
+scale = Vector2( 0.20088, 0.200427 )
+imagenNormal = ExtResource( 10 )
+imagenSeleccionada = ExtResource( 12 )
+imagenClic = ExtResource( 11 )
+
+[editable path="Aleatorio"]
