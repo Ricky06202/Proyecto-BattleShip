@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Escenas/Tablero/Tablero.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escenas/Barco/Barco.tscn" type="PackedScene" id=2]
@@ -12,36 +12,69 @@
 [ext_resource path="res://recursos/Interfaz/png/buttons/normal/accept.png" type="Texture" id=10]
 [ext_resource path="res://recursos/Interfaz/png/buttons/click/accept.png" type="Texture" id=11]
 [ext_resource path="res://recursos/Interfaz/png/buttons/hover/accept.png" type="Texture" id=12]
+[ext_resource path="res://recursos/Interfaz/png/buttons/normal/left.png" type="Texture" id=13]
+[ext_resource path="res://recursos/Interfaz/png/buttons/hover/left.png" type="Texture" id=14]
+[ext_resource path="res://recursos/Interfaz/png/buttons/click/left.png" type="Texture" id=15]
+[ext_resource path="res://recursos/Tipografia/Shiny Signature/Shiny Signature.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://Codigos/Juego/Juego.gd" type="Script" id=17]
+[ext_resource path="res://Escenas/Casillas Tablero/CasillasTablero.tscn" type="PackedScene" id=18]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="DynamicFont" id=2]
+size = 70
+use_filter = true
+font_data = ExtResource( 16 )
+
+[sub_resource type="CapsuleShape2D" id=3]
 
 [node name="Juego" type="Node2D"]
+scale = Vector2( 0.842878, 0.842878 )
+script = ExtResource( 17 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 367.0
+margin_top = 17.0
+margin_right = 1061.0
+margin_bottom = 106.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Jugador"
+align = 1
+valign = 1
+uppercase = true
 
 [node name="Tablero" parent="." instance=ExtResource( 1 )]
-position = Vector2( 362, 359 )
+position = Vector2( 714.583, 471.106 )
 scale = Vector2( 0.9, 0.9 )
 
-[node name="Barco" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1186, 86 )
+[node name="Barcos" type="Node2D" parent="."]
+position = Vector2( 1433.18, 365.415 )
 
-[node name="Barco2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1187, 213 )
+[node name="Barco" parent="Barcos" instance=ExtResource( 2 )]
+position = Vector2( -4.74548, -186.267 )
+
+[node name="Barco2" parent="Barcos" instance=ExtResource( 2 )]
+position = Vector2( -3.74548, -59.2666 )
 imagen = ExtResource( 3 )
 vidas = 3
 
-[node name="Barco3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1189, 345 )
+[node name="Barco3" parent="Barcos" instance=ExtResource( 2 )]
+position = Vector2( -1.74536, 72.7334 )
 imagen = ExtResource( 4 )
 vidas = 2
 
-[node name="Barco4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1192, 472 )
+[node name="Barco4" parent="Barcos" instance=ExtResource( 2 )]
+position = Vector2( 0.000247598, 198.131 )
 imagen = ExtResource( 5 )
 vidas = 2
 
+[node name="CasillasTablero" parent="." instance=ExtResource( 18 )]
+position = Vector2( 714.22, 471.005 )
+scale = Vector2( 0.897571, 0.897571 )
+
 [node name="Aleatorio" parent="." instance=ExtResource( 6 )]
-position = Vector2( 869, 639 )
-scale = Vector2( 0.196376, 0.195933 )
+visible = false
+position = Vector2( 1689.45, 765.235 )
+scale = Vector2( 0.209205, 0.208733 )
 imagenNormal = ExtResource( 7 )
 imagenSeleccionada = ExtResource( 9 )
 imagenClic = ExtResource( 8 )
@@ -58,13 +91,23 @@ texture = ExtResource( 7 )
 [node name="AreaInteractuable" parent="Aleatorio" index="1"]
 rotation = 1.57079
 scale = Vector2( 35.5851, 35.5851 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
-[node name="Boton" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1151, 639 )
-scale = Vector2( 0.20088, 0.200427 )
+[node name="Aceptar" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1399.97, 733.202 )
+scale = Vector2( 0.270977, 0.270365 )
 imagenNormal = ExtResource( 10 )
 imagenSeleccionada = ExtResource( 12 )
 imagenClic = ExtResource( 11 )
+
+[node name="Volver" parent="." instance=ExtResource( 6 )]
+position = Vector2( 118.641, 733.202 )
+scale = Vector2( 0.27028, 0.26967 )
+imagenNormal = ExtResource( 13 )
+imagenSeleccionada = ExtResource( 14 )
+imagenClic = ExtResource( 15 )
+
+[connection signal="input_event" from="Aceptar" to="." method="_on_Aceptar_input_event"]
+[connection signal="input_event" from="Volver" to="." method="_on_Volver_input_event"]
 
 [editable path="Aleatorio"]

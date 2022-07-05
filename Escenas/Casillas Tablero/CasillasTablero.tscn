@@ -1,0 +1,150 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Escenas/Casilla/Casilla.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Codigos/Casilla/Casilla.gd" type="Script" id=2]
+
+[node name="CasillasTablero" type="Node2D"]
+
+[node name="Casilla" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -320, -319 )
+script = ExtResource( 2 )
+
+[node name="Casilla2" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -191, -319 )
+script = ExtResource( 2 )
+
+[node name="Casilla3" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -63, -319 )
+script = ExtResource( 2 )
+
+[node name="Casilla4" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 63, -319 )
+script = ExtResource( 2 )
+
+[node name="Casilla5" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 191, -318 )
+script = ExtResource( 2 )
+
+[node name="Casilla6" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 318, -318 )
+script = ExtResource( 2 )
+
+[node name="Casilla7" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -319, -191 )
+script = ExtResource( 2 )
+
+[node name="Casilla8" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -190, -191 )
+script = ExtResource( 2 )
+
+[node name="Casilla9" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -62, -191 )
+script = ExtResource( 2 )
+
+[node name="Casilla10" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, -191 )
+script = ExtResource( 2 )
+
+[node name="Casilla11" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 192, -190 )
+script = ExtResource( 2 )
+
+[node name="Casilla12" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 319, -190 )
+script = ExtResource( 2 )
+
+[node name="Casilla13" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -320, -64 )
+script = ExtResource( 2 )
+
+[node name="Casilla14" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -191, -64 )
+script = ExtResource( 2 )
+
+[node name="Casilla15" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -63, -64 )
+script = ExtResource( 2 )
+
+[node name="Casilla16" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 63, -64 )
+script = ExtResource( 2 )
+
+[node name="Casilla17" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 191, -63 )
+script = ExtResource( 2 )
+
+[node name="Casilla18" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 318, -63 )
+script = ExtResource( 2 )
+
+[node name="Casilla19" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -319, 64 )
+script = ExtResource( 2 )
+
+[node name="Casilla20" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -190, 64 )
+script = ExtResource( 2 )
+
+[node name="Casilla21" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -62, 64 )
+script = ExtResource( 2 )
+
+[node name="Casilla22" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 64 )
+script = ExtResource( 2 )
+
+[node name="Casilla23" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 192, 65 )
+script = ExtResource( 2 )
+
+[node name="Casilla24" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 319, 65 )
+script = ExtResource( 2 )
+
+[node name="Casilla25" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -320, 191 )
+script = ExtResource( 2 )
+
+[node name="Casilla26" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -191, 191 )
+script = ExtResource( 2 )
+
+[node name="Casilla27" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -63, 191 )
+script = ExtResource( 2 )
+
+[node name="Casilla28" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 63, 191 )
+script = ExtResource( 2 )
+
+[node name="Casilla29" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 191, 192 )
+script = ExtResource( 2 )
+
+[node name="Casilla30" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 318, 192 )
+script = ExtResource( 2 )
+
+[node name="Casilla31" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -319, 319 )
+script = ExtResource( 2 )
+
+[node name="Casilla32" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -190, 319 )
+script = ExtResource( 2 )
+
+[node name="Casilla33" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -62, 319 )
+script = ExtResource( 2 )
+
+[node name="Casilla34" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 319 )
+script = ExtResource( 2 )
+
+[node name="Casilla35" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 192, 320 )
+script = ExtResource( 2 )
+
+[node name="Casilla36" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 319, 320 )
+script = ExtResource( 2 )

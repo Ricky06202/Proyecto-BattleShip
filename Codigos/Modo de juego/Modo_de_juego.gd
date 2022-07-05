@@ -49,3 +49,8 @@ func establecer_estado_de_visibilidad():
 func _on_Volver_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if fue_soltado_el_clic(event):
 		establecer_estado_de_visibilidad()
+
+
+func _on_Dos_Jugadores_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if fue_soltado_el_clic(event):
+		get_tree().change_scene("res://Escenas/Multijugador/Multijugador.tscn")

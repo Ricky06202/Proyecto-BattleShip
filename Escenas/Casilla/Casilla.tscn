@@ -1,11 +1,50 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://recursos/Playa, mar, y barcos viejos/PNG/Default size/Effects/explosion3.png" type="Texture" id=1]
+[ext_resource path="res://recursos/Playa, mar, y barcos viejos/PNG/Default size/Effects/explosion1.png" type="Texture" id=2]
+[ext_resource path="res://recursos/Playa, mar, y barcos viejos/PNG/Default size/Effects/explosion2.png" type="Texture" id=3]
+[ext_resource path="res://recursos/Adicional/X.png" type="Texture" id=4]
+[ext_resource path="res://Codigos/Casilla/Casilla.gd" type="Script" id=5]
+[ext_resource path="res://recursos/Adicional/Cuadrado Blanco.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Explocion",
+"speed": 3.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="Casilla" type="Node2D"]
+script = ExtResource( 5 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Casilla"]]
+[node name="Seleccionado" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 0.00392157, 0.00392157, 0.364706 )
+scale = Vector2( 0.198677, 0.203158 )
+texture = ExtResource( 6 )
+
+[node name="Acertar" type="AnimatedSprite" parent="."]
+visible = false
+frames = SubResource( 2 )
+animation = "Explocion"
+frame = 2
+playing = true
+
+[node name="Fallar" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.317647 )
+scale = Vector2( 0.0808594, 0.0808594 )
+texture = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="." groups=["Casilla"]]
 scale = Vector2( 5, 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
+
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]
