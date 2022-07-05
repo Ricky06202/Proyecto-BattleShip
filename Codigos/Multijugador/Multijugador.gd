@@ -6,10 +6,15 @@ onready var nodo_jugador2 := $Jugador2
 var ambosListos := false
 var empezar := false
 var turnoImpar := true
+var repetir := false
+var ganaRojo := false
+var ganaAzul := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
+	
+
 
 func alternar_actividad_casillas(jugador, actividad):
 	for casilla in jugador.get_node("CasillasTablero").get_children():
@@ -17,7 +22,6 @@ func alternar_actividad_casillas(jugador, actividad):
 		
 func se_destruyeron_los_barcos(jugador) -> bool:
 	for barco in jugador.get_node("Barcos").get_children():
-		print(barco.visible)
 		if not barco.visible:
 			return false
 	return true
@@ -29,12 +33,29 @@ func se_realizo_accion(jugador) -> bool:
 			alternar_actividad_casillas(jugador, false)
 			return true
 	return false
+	
+func se_acerto(jugador) -> bool:
+	for casilla in jugador.get_node("CasillasTablero").get_children():
+		if casilla.seAcerto:
+			casilla.seAcerto = false
+			alternar_actividad_casillas(jugador, true)
+			return true
+	return false
 
 func mover_camara_a(jugador, delta):
 	$Camera2D.global_position = lerp($Camera2D.global_position, jugador.global_position, 5 * delta)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:	
+	
+	if ganaAzul or ganaRojo:
+		$Espera.stop()
+	if $Espera.is_stopped():
+		if ganaRojo:
+			$AnimacionesMensajes.play("GanasteRojo")
+		elif ganaAzul:
+			$AnimacionesMensajes.play("GanasteAzul")
+	
 	ambosListos = nodo_jugador1.estanBloqueados and nodo_jugador2.estanBloqueados
 	# se ejecuta cuando el jugador 1 esta listo
 	if not ambosListos and nodo_jugador1.estanBloqueados: 
@@ -57,21 +78,25 @@ func _process(delta: float) -> void:
 		
 
 
-func _on_Espera_timeout() -> void:
+func _on_Espera_timeout() -> void:	
+	repetir = se_acerto(nodo_jugador1) or se_acerto(nodo_jugador2)
+	
 	if se_destruyeron_los_barcos(nodo_jugador1) or se_destruyeron_los_barcos(nodo_jugador2):
 		if se_destruyeron_los_barcos(nodo_jugador1):
 			$AnimacionesMensajes.play("GanasteAzul")
+			ganaAzul = true
 		elif se_destruyeron_los_barcos(nodo_jugador2):
 			$AnimacionesMensajes.play("GanasteRojo")
+			ganaRojo = true
 		empezar = false
 		alternar_actividad_casillas(nodo_jugador1, false)
 		alternar_actividad_casillas(nodo_jugador2, false)
 		$Jugador1/Volver.visible = true
 		$Jugador2/Volver.visible = true
-		return
-		
-	turnoImpar = not turnoImpar
-	if turnoImpar:
-		$AnimacionesMensajes.play("TurnoAzul")
 	else:
-		$AnimacionesMensajes.play("TurnoRojo")
+		if not repetir:
+			turnoImpar = not turnoImpar
+		if turnoImpar:
+			$AnimacionesMensajes.play("TurnoAzul")
+		else:
+			$AnimacionesMensajes.play("TurnoRojo")

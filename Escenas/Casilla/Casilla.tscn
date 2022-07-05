@@ -30,7 +30,7 @@ texture = ExtResource( 6 )
 visible = false
 frames = SubResource( 2 )
 animation = "Explocion"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Fallar" type="Sprite" parent="."]

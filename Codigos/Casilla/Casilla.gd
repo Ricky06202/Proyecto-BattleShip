@@ -3,6 +3,7 @@ extends Node2D
 var estaActiva := false
 var seDioClic := false
 var acerto := false
+var seAcerto := false
 
 var accionRealizada := false
 
@@ -34,5 +35,6 @@ func _on_Area2D_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 		if $Area2D.get_overlapping_areas().size() > 0:
 			$Acertar.visible = true
 			acerto = true
+			seAcerto = true
 		else:
 			$Fallar.visible = true

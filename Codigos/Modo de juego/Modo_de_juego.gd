@@ -57,4 +57,5 @@ func _on_Dos_Jugadores_input_event(viewport: Node, event: InputEvent, shape_idx:
 
 
 func _on_Ayuda_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	get_tree().change_scene("res://Escenas/Ayuda/Ayuda.tscn")
+	if fue_soltado_el_clic(event):
+		get_tree().change_scene("res://Escenas/Ayuda/Ayuda.tscn")
