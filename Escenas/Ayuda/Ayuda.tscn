@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://recursos/Interfaz/png/frames/level select.png" type="Texture" id=1]
+[ext_resource path="res://Escenas/Boton/Boton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Codigos/Ayuda/Ayuda.gd" type="Script" id=3]
+
+[node name="Ayuda" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="FondoAyuda" type="Sprite" parent="."]
+scale = Vector2( 0.372967, 0.380649 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Boton" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1138, 608 )
+scale = Vector2( 0.217759, 0.217268 )
