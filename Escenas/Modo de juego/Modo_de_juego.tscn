@@ -222,6 +222,7 @@ imagenClic = ExtResource( 8 )
 
 [connection signal="input_event" from="Modo/Un_Jugador" to="." method="_on_Un_Jugador_input_event"]
 [connection signal="input_event" from="Modo/Dos_Jugadores" to="." method="_on_Dos_Jugadores_input_event"]
+[connection signal="input_event" from="Ayuda" to="." method="_on_Ayuda_input_event"]
 [connection signal="input_event" from="Volver" to="." method="_on_Volver_input_event"]
 [connection signal="input_event" from="Menu" to="." method="_on_Menu_input_event"]
 

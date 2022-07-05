@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Escenas/Pagina Ayuda/Pagina Ayuda.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Codigos/Ayuda/Ayuda.gd" type="Script" id=2]
 
 [node name="Ayuda" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -10,14 +12,93 @@ current = true
 
 [node name="Pagina1" parent="." instance=ExtResource( 1 )]
 
+[node name="Titulo" parent="Pagina1" index="1"]
+text = "Ayuda de BattleShip"
+
+[node name="Texto" parent="Pagina1" index="2"]
+text = "Bienvenido a BattleShip!! 
+BattleShip, también llamado <<batalla naval>> <<juego de los barquitos >> o <<hundir la flota>>, es un clásico juego de mesa, que es llevado ahora a la comodidad de nuestra computadora. Este es un juego de estrategia y algo de suerte que involucra a dos jugadores, el juego consiste en hundir los barcos del oponente, el primero que hunda todos los barcos enemigos, se llevará la victoria. 
+"
+autowrap = true
+
 [node name="Pagina2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1280, 0 )
+
+[node name="Titulo" parent="Pagina2" index="1"]
+text = "Modo de Juego"
+
+[node name="Texto" parent="Pagina2" index="2"]
+text = "Multijugador
+En BattleShip podrás retar a un amigo en una batalla de multijugador local poniendo a prueba tu inteligencia y demostrando tu gran astucia al armar una buena estrategia.
+"
+autowrap = true
 
 [node name="Pagina3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 2560, 0 )
 
+[node name="Titulo" parent="Pagina3" index="1"]
+text = "Diseña la Estrategia y Posiciona tus Barcos"
+
+[node name="Texto" parent="Pagina3" index="2"]
+text = "Con ayuda del mouse podrás arrastrar los barcos a las casillas de tu preferencia en forma horizontal o vertical, cabe destacar que no puedes colocar un barco encima del otro, además si colocas el barco de forma incorrecta este volverá a su posición inicial. "
+autowrap = true
+
 [node name="Pagina4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 3841, 0 )
 
+[node name="Titulo" parent="Pagina4" index="1"]
+text = "Prepárate para la Batalla "
+
+[node name="Texto" parent="Pagina4" index="2"]
+text = "Una vez que se han posicionado los barcos correctamente, si estás contento con su posición actual puedes dar clic en el botón que contiene el gancho para comenzar con la batalla"
+autowrap = true
+
 [node name="Pagina5" parent="." instance=ExtResource( 1 )]
 position = Vector2( 5120, 0 )
+
+[node name="Titulo" parent="Pagina5" index="1"]
+text = "¡¡Hora de la Batalla!!"
+
+[node name="Texto" parent="Pagina5" index="2"]
+margin_top = 123.0
+margin_bottom = 528.0
+text = "Una vez posicionados los barcos de cada jugador, estos serán colocados de forma secreta e invisible al oponente, iniciando así la batalla, la cual consta de una serie de rondas.
+En cada ronda, cada jugador en su turno dispara hacia la flota de su oponente indicando su posición (ubicación de una casilla) la cual se registra en el tablero del oponente. 
+Si esa posición es ocupada por parte de un barco contrario se acreditará un punto al jugador que esté atacando."
+autowrap = true
+
+[node name="Pagina6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 6400, 0 )
+
+[node name="Titulo" parent="Pagina6" index="1"]
+text = "¡¡Hora de la Batalla!!"
+
+[node name="Texto" parent="Pagina6" index="2"]
+text = "El jugador que a tocado un barco en su anterior jugada, volverá a disparar hasta que falle.
+Si la posición indicada no corresponde a una parte de alguno de los barcos, se le concede el turno al otro jugador. 
+Gana aquel que destruya primero todos los barcos, así que tendrás que ser ágil para lograr acabar primero con los barcos enemigos.
+¡¡Que gane el mejor!!
+"
+autowrap = true
+
+[node name="Derecha" parent="Pagina6" index="3"]
+visible = false
+
+[connection signal="input_event" from="Pagina1/Derecha" to="." method="_on_Derecha_input_event"]
+[connection signal="input_event" from="Pagina1/Izquierda" to="." method="_on_Izquierda_input_event"]
+[connection signal="input_event" from="Pagina2/Derecha" to="." method="_on_Derecha_input_event"]
+[connection signal="input_event" from="Pagina2/Izquierda" to="." method="_on_Izquierda_input_event"]
+[connection signal="input_event" from="Pagina3/Derecha" to="." method="_on_Derecha_input_event"]
+[connection signal="input_event" from="Pagina3/Izquierda" to="." method="_on_Izquierda_input_event"]
+[connection signal="input_event" from="Pagina4/Derecha" to="." method="_on_Derecha_input_event"]
+[connection signal="input_event" from="Pagina4/Izquierda" to="." method="_on_Izquierda_input_event"]
+[connection signal="input_event" from="Pagina5/Derecha" to="." method="_on_Derecha_input_event"]
+[connection signal="input_event" from="Pagina5/Izquierda" to="." method="_on_Izquierda_input_event"]
+[connection signal="input_event" from="Pagina6/Izquierda" to="." method="_on_Izquierda_input_event"]
+
+[editable path="Pagina1"]
+[editable path="Pagina2"]
+[editable path="Pagina3"]
+[editable path="Pagina4"]
+[editable path="Pagina5"]
+[editable path="Pagina6"]
