@@ -14,6 +14,10 @@ config/name="Proyecto BattleShip"
 run/main_scene="res://Escenas/Menu/Menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Datos="*res://Codigos/Datos/Datos.gd"
+
 [display]
 
 window/size/width=1280
